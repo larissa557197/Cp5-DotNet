@@ -8,7 +8,11 @@ public static class UseCaseExtensions
     {
         // todos os casos de uso
         services.AddScoped<IMotoUseCase, MotoUseCase>();
-        services.AddScoped<IFilialUseCase, FilialUseCase>();
         services.AddScoped<IPatioUseCase, PatioUseCase>();
+        services.AddScoped<IFilialUseCase, FilialUseCase>();
+
+        return services;
+
+
     }
 }
