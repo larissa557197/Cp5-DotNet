@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using VisionHive.API.Configs;
 using VisionHive.API.Extensions;
 using VisionHive.Application;
+using VisionHive.Application.Configs;
 
 namespace VisionHive.API;
 
@@ -11,22 +11,46 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        // le as configurações do appsettings.json
         var settings = builder.Configuration.Get<Settings>();
 
+        // controllers
         builder.Services.AddControllers();
+        
+        // swagger + API Explorer
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwagger(settings.Swagger);
-        builder.Services.AddChecks(settings);
-        builder.Services.AddInfrastructure(settings);
+        
+        // Mongo
+        builder.Services.AddSingleton(settings.MongoDb);
 
+        // infrastructure (Oracle + Mongo + Repositórios)
+        builder.Services.AddInfrastructure(settings);
+        
+        // usecases (camada application)
+        builder.Services.AddUseCase();
+        
+        // Helth Checks (Oracle, Mongo, URLs)
+        builder.Services.AddChecks(settings);
+        
+        // versionamento da api
+        builder.Services.AddApiVersioning();
+        
+        
         var app = builder.Build();
 
-        app.UseSwagger();
-        app.UseSwaggerUI(options =>
+        // swagger (dev)
+        if (app.Environment.IsDevelopment())
         {
-            options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-            options.SwaggerEndpoint("/swagger/v2/swagger.json", "v2");
-        });
+            app.UseSwagger();
+            app.UseSwaggerUI(ui =>
+            {
+                ui.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                ui.SwaggerEndpoint("/swagger/v2/swagger.json", "v2");
+            });
+        }
+        
+        app.UseRouting();
 
         app.UseHttpsRedirection();
         app.UseAuthorization();

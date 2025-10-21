@@ -1,4 +1,6 @@
-namespace VisionHive.API.Configs
+using VisionHive.API.Configs;
+
+namespace VisionHive.Application.Configs
 {
     public class Settings
     {
