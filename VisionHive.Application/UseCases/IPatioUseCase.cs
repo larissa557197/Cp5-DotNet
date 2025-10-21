@@ -8,7 +8,7 @@ namespace VisionHive.Application.UseCases;
 public interface IPatioUseCase
 {
     Task<PatioResponse> PostAsync(PatioRequest request, CancellationToken ct = default);
-    Task<PageResult<Patio>> GetPaginationAsync(int page, int pageSize, string? search, CancellationToken ct = default);
+    Task<PageResult<Patio>> GetPaginationAsync(PaginatedRequest request, CancellationToken ct = default);
     Task<PatioResponse?> GetByIdAsync(Guid id, CancellationToken ct = default);
     Task<bool> DeleteAsync(Guid id, CancellationToken ct = default);
     Task<bool> UpdateAsync(Guid id, PatioRequest request, CancellationToken ct = default);

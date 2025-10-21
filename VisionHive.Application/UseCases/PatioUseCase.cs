@@ -21,8 +21,12 @@ public class PatioUseCase(IPatioRepository repo) : IPatioUseCase
         };
     }
 
-    public Task<PageResult<Patio>> GetPaginationAsync(int page, int pageSize, string? search, CancellationToken ct = default)
-        => repo.GetPaginationAsync(page, pageSize, search, ct);
+    public Task<PageResult<Patio>> GetPaginationAsync(PaginatedRequest request, CancellationToken ct = default)
+    {
+        var page = request.PageNumber <= 0 ? 1 : request.PageNumber;
+        var size = request.PageSize   <= 0 ? 10 : request.PageSize;
+        return repo.GetPaginationAsync(page, size, request.Subject, ct);
+    }
 
     public async Task<PatioResponse?> GetByIdAsync(Guid id, CancellationToken ct = default)
     {

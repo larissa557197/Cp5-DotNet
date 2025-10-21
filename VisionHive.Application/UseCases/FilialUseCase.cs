@@ -22,8 +22,13 @@ public class FilialUseCase(IFilialRepository repo) : IFilialUseCase
         };
     }
 
-    public Task<PageResult<Filial>> GetPaginationAsync(int page, int pageSize, string? search, CancellationToken ct = default)
-        => repo.GetPaginationAsync(page, pageSize, search, ct);
+    public Task<PageResult<Filial>> GetPaginationAsync(PaginatedRequest request, CancellationToken ct = default)
+    {
+        var page = request.PageNumber <= 0 ? 1 : request.PageNumber;
+        var size = request.PageSize   <= 0 ? 10 : request.PageSize;
+        return repo.GetPaginationAsync(page, size, request.Subject, ct);
+    }
+        
 
     public async Task<FilialResponse?> GetByIdAsync(Guid id, CancellationToken ct = default)
     {
