@@ -5,6 +5,8 @@ using VisionHive.Domain.Repositories;
 using VisionHive.Infrastructure.Contexts;
 using VisionHive.Application.Configs;
 using VisionHive.Infrastructure.Repositories;
+//using VisionHive.Infrastructure.Mongo.Repositories;
+
 
 namespace VisionHive.Application;
 
@@ -15,10 +17,7 @@ public static class DependecyInjection
         // Conexão com Oracle (CP4)
         return services.AddDbContext<VisionHiveContext>(options =>
         {
-            options.UseOracle(settings.ConnectionStrings.DefaultConnection, oracle =>
-            {
-                oracle.EnableRetryOnFailure();
-            });
+            options.UseOracle(settings.ConnectionStrings.DefaultConnection);
         });
     }
 
