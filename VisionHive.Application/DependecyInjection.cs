@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using VisionHive.API.Configs;
-using VisionHive.Infrastructure.Contexts;
 using MongoDB.Driver;
 using VisionHive.Domain.Repositories;
-using VisionHive.Infrastructure.Mongo.Repositories;
+using VisionHive.Infrastructure.Contexts;
+using VisionHive.Application.Configs;
+using VisionHive.Infrastructure.Repositories;
 
 namespace VisionHive.Application;
 
@@ -12,23 +12,39 @@ public static class DependecyInjection
 {
     private static IServiceCollection AddDBContext(this IServiceCollection services, Settings settings)
     {
+        // Conexão com Oracle (CP4)
         return services.AddDbContext<VisionHiveContext>(options =>
-            options.UseOracle(settings.ConnectionStrings.DefaultConnection));
+        {
+            options.UseOracle(settings.ConnectionStrings.DefaultConnection, oracle =>
+            {
+                oracle.EnableRetryOnFailure();
+            });
+        });
     }
 
     private static IServiceCollection AddMongoContext(this IServiceCollection services, Settings settings)
     {
-        var client = new MongoClient(settings.MongoDb.ConnectionString);
-        var database = client.GetDatabase(settings.MongoDb.DatabaseName);
-        services.AddSingleton<IMongoDatabase>(database);
+        // Registra MongoClient e IMongoDatabase com ciclo de vida correto
+        services.AddSingleton<IMongoClient>(_ => new MongoClient(settings.MongoDb.ConnectionString));
+        services.AddScoped(sp =>
+        {
+            var client = sp.GetRequiredService<IMongoClient>();
+            return client.GetDatabase(settings.MongoDb.DatabaseName);
+        });
+
         return services;
     }
 
     private static IServiceCollection AddRepository(this IServiceCollection services)
     {
+        // Repositórios relacionais (Oracle)
         services.AddScoped<IMotoRepository, MotoRepository>();
         services.AddScoped<IFilialRepository, FilialRepository>();
         services.AddScoped<IPatioRepository, PatioRepository>();
+
+        // Se existir repositório Mongo:
+        // services.AddScoped<IAlertaRepository, AlertaRepository>();
+
         return services;
     }
 
