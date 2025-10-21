@@ -4,7 +4,7 @@ using VisionHive.Domain.Pagination;
 using VisionHive.Domain.Repositories;
 using VisionHive.Infrastructure.Contexts;
 
-namespace VisionHive.Application.Repositories;
+namespace VisionHive.Infrastructure.Repositories;
 
 public class MotoRepository : IMotoRepository
 {
