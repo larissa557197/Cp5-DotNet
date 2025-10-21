@@ -17,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\VisionHive.Application\VisionHive.Application.csproj" />
+      
     </ItemGroup>
 
 </Project>

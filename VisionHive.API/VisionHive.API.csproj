@@ -18,6 +18,15 @@
         </PackageReference>
         <PackageReference Include="Oracle.EntityFrameworkCore" Version="9.23.90" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
+          <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
+          <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+          <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="9.0.0" />
+          <PackageReference Include="AspNetCore.HealthChecks.Oracle" Version="8.0.0" />
+          <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="9.0.0" />
+          <PackageReference Include="FluentValidation" Version="12.0.0" />
+          <PackageReference Include="Microsoft.OpenApi" Version="1.6.14" />
+          <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.9" />
+          <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
     </ItemGroup>
 
     <ItemGroup>
@@ -27,7 +36,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\VisionHive.Infrastructure\VisionHive.Infrastructure.csproj" />
+        <ProjectReference Include="..\VisionHive.Application\VisionHive.Application.csproj" />
+        <ProjectReference Include="..\VisionHive.Infrastructure\VisionHive.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
