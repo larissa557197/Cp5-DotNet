@@ -1,6 +1,6 @@
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
-namespace VisionHive.API.Configs
+namespace VisionHive.Application.Configs
 {
     public sealed class SwaggerSettings
     {
