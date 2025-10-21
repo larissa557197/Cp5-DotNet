@@ -6,48 +6,46 @@ using VisionHive.Domain.Repositories;
 
 namespace VisionHive.Application.UseCases;
 
-public class FilialUseCase(IFilialRepository repo) : IFilialUseCase
+public class PatioUseCase(IPatioRepository repo) : IPatioUseCase
 {
-    public async Task<FilialResponse> PostAsync(FilialRequest request, CancellationToken ct = default)
+    public async Task<PatioResponse> PostAsync(PatioRequest request, CancellationToken ct = default)
     {
-        var entity = new Filial(request.Nome, request.Bairro, request.Cnpj);
+        var entity = new Patio(request.Nome, request.LimiteMotos, request.FilialId);
         var created = await repo.AddAsync(entity, ct);
 
-        return new FilialResponse
+        return new PatioResponse
         {
             Id = created.Id,
             Nome = created.Nome,
-            Bairro = created.Bairro,
-            Cnpj = created.Cnpj
+            LimiteMotos = created.LimiteMotos
         };
     }
 
-    public Task<PageResult<Filial>> GetPaginationAsync(int page, int pageSize, string? search, CancellationToken ct = default)
+    public Task<PageResult<Patio>> GetPaginationAsync(int page, int pageSize, string? search, CancellationToken ct = default)
         => repo.GetPaginationAsync(page, pageSize, search, ct);
 
-    public async Task<FilialResponse?> GetByIdAsync(Guid id, CancellationToken ct = default)
+    public async Task<PatioResponse?> GetByIdAsync(Guid id, CancellationToken ct = default)
     {
         var entity = await repo.GetByIdAsync(id, ct);
         if (entity is null) return null;
 
-        return new FilialResponse
+        return new PatioResponse
         {
             Id = entity.Id,
             Nome = entity.Nome,
-            Bairro = entity.Bairro,
-            Cnpj = entity.Cnpj
+            LimiteMotos = entity.LimiteMotos
         };
     }
 
     public Task<bool> DeleteAsync(Guid id, CancellationToken ct = default)
         => repo.DeleteAsync(id, ct);
 
-    public async Task<bool> UpdateAsync(Guid id, FilialRequest request, CancellationToken ct = default)
+    public async Task<bool> UpdateAsync(Guid id, PatioRequest request, CancellationToken ct = default)
     {
         var entity = await repo.GetByIdAsync(id, ct);
         if (entity is null) return false;
 
-        entity.AtualizarDados(request.Nome, request.Bairro, request.Cnpj);
+        entity.AtualizarDados(request.Nome, request.LimiteMotos);
         return await repo.UpdateAsync(entity, ct);
     }
 }

@@ -8,9 +8,9 @@ namespace VisionHive.Application.UseCases;
 
 public interface IMotoUseCase
 {
-    Task<MotoResponse> Post(MotoRequest request, CancellationToken ct = default);
-    Task<MotoResponse?> GetById(Guid id, CancellationToken ct = default);
-    Task<PageResult<MotoResponse>> GetPagination(PaginatedRequest request, CancellationToken ct = default);
-    Task<bool> Put(Guid id, MotoRequest request, CancellationToken ct = default);
-    Task<bool> Delete(Guid id, CancellationToken ct = default);
+    Task<MotoResponse> PostAsync(MotoRequest request, CancellationToken ct = default);
+    Task<PageResult<Moto>> GetPaginationAsync(int page, int pageSize, string? search, CancellationToken ct = default);
+    Task<MotoResponse?> GetByIdAsync(Guid id, CancellationToken ct = default);
+    Task<bool> DeleteAsync(Guid id, CancellationToken ct = default);
+    Task<bool> UpdateAsync(Guid id, MotoRequest request, CancellationToken ct = default);
 }
