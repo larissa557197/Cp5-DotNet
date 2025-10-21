@@ -1,3 +1,4 @@
+
 using VisionHive.API.Configs;
 
 namespace VisionHive.Application.Configs
