@@ -1,4 +1,4 @@
-namespace VisionHive.API.Configs
+namespace VisionHive.Application.Configs
 {
     public class MongoDbSettings
     {
