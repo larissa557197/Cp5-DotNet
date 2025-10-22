@@ -1,6 +1,7 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
+using VisionHive.Application.DTO.Request;
 using VisionHive.Domain.Entities;
 
 namespace VisionHive.API.Controllers.v2
@@ -10,47 +11,19 @@ namespace VisionHive.API.Controllers.v2
     [ApiVersion(2.0)]
     public class PatioControllerV2 : ControllerBase
     {
-        private readonly IMongoCollection<Patio> _patios;
-
-        public PatioControllerV2(IMongoDatabase database)
-        {
-            _patios = database.GetCollection<Patio>("patios");
-        }
-        
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            var list = await _patios.Find(_ => true).ToListAsync();
-            return Ok(list);
-        }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(Guid id)
-        {
-            var patio = await _patios.Find(p => p.Id == id).FirstOrDefaultAsync();
-            return patio is null ? NotFound() : Ok(patio);
-        }
-
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Patio patio)
+        public IActionResult Post([FromBody] PatioRequest request)
         {
-            patio.Id = Guid.NewGuid();
-            await _patios.InsertOneAsync(patio);
-            return CreatedAtAction(nameof(GetById), new { id = patio.Id }, patio);
+            Console.WriteLine("Versão da API: 2.0 - MongoDB");
+            Console.WriteLine($"Placa Recebida:  {request.Nome}");
+            return Ok(new { Mensagem = "Pátio inserido com sucesso (MongoDB)", request });
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(Guid id, [FromBody] Patio patio)
+        [HttpGet]
+        public IActionResult GetAll()
         {
-            var result = await _patios.ReplaceOneAsync(p => p.Id == id, patio);
-            return result.MatchedCount == 0 ? NotFound() : Ok(patio);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
-        {
-            var result = await _patios.DeleteOneAsync(p => p.Id == id);
-            return result.DeletedCount == 0 ? NotFound() : NoContent();
+            Console.WriteLine("Versão da API: 2.0 - MongoDB");
+            return Ok(new { Mensagem = "Listando pátios do MongoDB" });
         }
     }
 }
