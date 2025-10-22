@@ -3,7 +3,7 @@
     public class Patio
     {
         protected Patio(){}
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
         public string Nome { get; private set; }
         public int LimiteMotos { get; private set; } = 100; // limite de 100 motos por patio 
 
