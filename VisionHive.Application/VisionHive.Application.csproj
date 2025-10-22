@@ -10,10 +10,12 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.8" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.8" />
       <PackageReference Include="FluentValidation" Version="12.0.0" />
+      <PackageReference Include="MongoDB.Driver" Version="2.25.0" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\VisionHive.Domain\VisionHive.Domain.csproj" />
+        <ProjectReference Include="..\VisionHive.Infrastructure\VisionHive.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

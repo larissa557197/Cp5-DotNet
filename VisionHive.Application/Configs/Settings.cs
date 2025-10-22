@@ -1,5 +1,5 @@
 
-using VisionHive.API.Configs;
+using VisionHive.Application.Configs;
 
 namespace VisionHive.Application.Configs
 {

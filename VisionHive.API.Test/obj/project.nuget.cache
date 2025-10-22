@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N+E81IU3b9o=",
+  "dgSpecHash": "RCuxRt1HhCI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.API.Test\\VisionHive.API.Test.csproj",
+  "projectFilePath": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.API.Test\\VisionHive.API.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\laris\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\laris\\.nuget\\packages\\entityframework\\6.5.1\\entityframework.6.5.1.nupkg.sha512",

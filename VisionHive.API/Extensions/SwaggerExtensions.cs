@@ -1,5 +1,5 @@
 using Microsoft.OpenApi.Models;
-using VisionHive.API.Configs;
+using VisionHive.Application.Configs;
 
 namespace VisionHive.API.Extensions;
 
@@ -8,44 +8,45 @@ public static class SwaggerExtensions
     public static IServiceCollection AddSwagger(this IServiceCollection services, SwaggerSettings settings)
     {
         return services.AddSwaggerGen(swagger =>
+        {
+            // v1
+            swagger.SwaggerDoc("v1", new OpenApiInfo
             {
-                swagger.SwaggerDoc("v1", new OpenApiInfo
+                Title = settings.Title,
+                Version = "v1",
+                Description = settings.Description,
+                Contact = new OpenApiContact
                 {
-                    Title = settings.Title,
-                    Version = "v1",
-                    Description = settings.Description,
-                    Contact = new OpenApiContact
-                    {
-                        Name = settings.Contact.Name,
-                        Email = settings.Contact.Email
-                    }
-                });
-                
-                swagger.SwaggerDoc("v2", new OpenApiInfo
-                {
-                    Title = settings.Title + " v2",
-                    Version = "v2",
-                    Description = settings.Description,
-                    Contact = new OpenApiContact
-                    {
-                        Name = settings.Contact.Name,
-                        Email = settings.Contact.Email
-                    }
-                });
-              
-                // swagger.EnableAnnotations();
+                    Name  = settings.Contact?.Name,
+                    Email = settings.Contact?.Email
+                }
+            });
 
-                swagger.AddServer(new OpenApiServer());
-                
+            // v2
+            swagger.SwaggerDoc("v2", new OpenApiInfo
+            {
+                Title = $"{settings.Title} v2",
+                Version = "v2",
+                Description = settings.Description,
+                Contact = new OpenApiContact
+                {
+                    Name  = settings.Contact?.Name,
+                    Email = settings.Contact?.Email
+                }
+            });
+
+            // servers do appsettings
+            if (settings.Servers is not null)
+            {
                 foreach (var server in settings.Servers)
                 {
                     swagger.AddServer(new OpenApiServer
                     {
                         Url = server.Url,
-                        Description = server.Description 
+                        Description = server.Description
                     });
                 }
             }
-        );
+        });
     }
 }

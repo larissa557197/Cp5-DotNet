@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Application\\VisionHive.Application.csproj": {}
+    "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Application\\VisionHive.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Application\\VisionHive.Application.csproj": {
+    "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Application\\VisionHive.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Application\\VisionHive.Application.csproj",
+        "projectUniqueName": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Application\\VisionHive.Application.csproj",
         "projectName": "VisionHive.Application",
-        "projectPath": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Application\\VisionHive.Application.csproj",
+        "projectPath": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Application\\VisionHive.Application.csproj",
         "packagesPath": "C:\\Users\\laris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Application\\obj\\",
+        "outputPath": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Domain\\VisionHive.Domain.csproj": {
-                "projectPath": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Domain\\VisionHive.Domain.csproj"
+              "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Domain\\VisionHive.Domain.csproj": {
+                "projectPath": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Domain\\VisionHive.Domain.csproj"
               },
-              "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Infrastructure\\VisionHive.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Infrastructure\\VisionHive.Infrastructure.csproj"
+              "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Infrastructure\\VisionHive.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Infrastructure\\VisionHive.Infrastructure.csproj"
               }
             }
           }
@@ -57,23 +57,21 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "EntityFramework": {
+            "FluentValidation": {
               "target": "Package",
-              "version": "[6.5.1, )"
+              "version": "[12.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.8, )"
             },
-            "Oracle.EntityFrameworkCore": {
+            "MongoDB.Driver": {
               "target": "Package",
-              "version": "[9.23.90, )"
+              "version": "[2.25.0, )"
             }
           },
           "imports": [
@@ -96,14 +94,14 @@
         }
       }
     },
-    "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Domain\\VisionHive.Domain.csproj": {
+    "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Domain\\VisionHive.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Domain\\VisionHive.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Domain\\VisionHive.Domain.csproj",
         "projectName": "VisionHive.Domain",
-        "projectPath": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Domain\\VisionHive.Domain.csproj",
+        "projectPath": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Domain\\VisionHive.Domain.csproj",
         "packagesPath": "C:\\Users\\laris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Domain\\obj\\",
+        "outputPath": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -142,23 +140,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.5.1, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.8, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.8, )"
-            },
-            "Oracle.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.23.90, )"
             }
           },
           "imports": [
@@ -181,14 +165,14 @@
         }
       }
     },
-    "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Infrastructure\\VisionHive.Infrastructure.csproj": {
+    "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Infrastructure\\VisionHive.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Infrastructure\\VisionHive.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Infrastructure\\VisionHive.Infrastructure.csproj",
         "projectName": "VisionHive.Infrastructure",
-        "projectPath": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Infrastructure\\VisionHive.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Infrastructure\\VisionHive.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\laris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -209,8 +193,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Domain\\VisionHive.Domain.csproj": {
-                "projectPath": "C:\\Users\\laris\\Downloads\\VisionHive-CP5\\VisionHive.Domain\\VisionHive.Domain.csproj"
+              "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Domain\\VisionHive.Domain.csproj": {
+                "projectPath": "C:\\Users\\laris\\Cp5-DotNet\\VisionHive.Domain\\VisionHive.Domain.csproj"
               }
             }
           }
@@ -231,17 +215,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.5.1, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.8, )"
             },

@@ -3,7 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using MongoDB.Driver;
-using VisionHive.API.Configs;
+using VisionHive.Application.Configs;
 
 namespace VisionHive.API.Extensions;
 
