@@ -4,7 +4,7 @@ namespace VisionHive.Domain.Entities
     public class Moto
     {
         protected Moto(){}
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
         public string? Placa { get; private set; }
 
         public string? Chassi { get; private set; }
