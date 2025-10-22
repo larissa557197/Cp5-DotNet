@@ -34,7 +34,7 @@ public class Program
         builder.Services.AddChecks(settings);
         
         // versionamento da api
-        builder.Services.AddApiVersioning();
+        builder.Services.AddVersioning();
         
         
         var app = builder.Build();
