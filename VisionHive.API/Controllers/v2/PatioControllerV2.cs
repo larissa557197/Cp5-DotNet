@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using VisionHive.Application.DTO.Request;
 using VisionHive.Domain.Entities;
+using VisionHive.Infrastructure.Repositories.Mongo;
 
 namespace VisionHive.API.Controllers.v2
 {
@@ -11,19 +12,38 @@ namespace VisionHive.API.Controllers.v2
     [ApiVersion(2.0)]
     public class PatioControllerV2 : ControllerBase
     {
-        [HttpPost]
-        public IActionResult Post([FromBody] PatioRequest request)
+        private readonly PatioMongoRepository _repository;
+
+        public PatioControllerV2(PatioMongoRepository repository)
         {
-            Console.WriteLine("Versão da API: 2.0 - MongoDB");
-            Console.WriteLine($"Placa Recebida:  {request.Nome}");
-            return Ok(new { Mensagem = "Pátio inserido com sucesso (MongoDB)", request });
+            _repository = repository;
+        }
+        
+        // método pra criar um pátio
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] PatioRequest request)
+        {
+            var patio = new Patio
+            {
+                Nome = request.Nome,
+                LimiteMotos = request.LimiteMotos,
+                FilialId = request.FilialId
+            };
+
+            await _repository.CreateAsync(patio);
+            
+            return Ok(new
+            {
+                Mensagem = "Pátio Inserido com sucesso (MongoDB)",
+                Patio = patio
+            });
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            Console.WriteLine("Versão da API: 2.0 - MongoDB");
-            return Ok(new { Mensagem = "Listando pátios do MongoDB" });
+            var patios = await _repository.GetAllAsync();
+            return Ok(patios);
         }
     }
 }
