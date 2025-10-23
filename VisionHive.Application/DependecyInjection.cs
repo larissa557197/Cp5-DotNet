@@ -45,6 +45,7 @@ public static class DependecyInjection
 
         // Se existir repositório Mongo:
         services.AddScoped<FilialMongoRepository>();
+        services.AddScoped<PatioMongoRepository>();
 
         return services;
     }
