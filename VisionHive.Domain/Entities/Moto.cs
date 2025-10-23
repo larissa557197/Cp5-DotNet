@@ -3,18 +3,20 @@ namespace VisionHive.Domain.Entities
 {
     public class Moto
     {
-        protected Moto(){}
+        
         public Guid Id { get; set; }
-        public string? Placa { get; private set; }
+        public string? Placa { get; set; }
 
-        public string? Chassi { get; private set; }
+        public string? Chassi { get; set; }
 
-        public string? NumeroMotor { get; private set; }
+        public string? NumeroMotor { get; set; }
 
-        public Prioridade Prioridade { get; private set; }
+        public Prioridade Prioridade { get; set; }
 
+        
+        public Moto(){}
              
-        public Guid PatioId { get; private set; }
+        public Guid PatioId { get; set; }
         public Patio Patio { get; private set; }
 
 
