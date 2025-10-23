@@ -19,7 +19,7 @@ namespace VisionHive.API.Controllers.v2
             _repository = repository;
         }
         
-        // método pra criar um pátio
+        // método pra criar um pátio - POST
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] PatioRequest request)
         {
