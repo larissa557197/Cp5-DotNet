@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using VisionHive.Application.DTO.Request;
 using VisionHive.Domain.Entities;
+using VisionHive.Infrastructure.Repositories.Mongo;
 
 namespace VisionHive.API.Controllers.v2
 {
@@ -11,19 +12,40 @@ namespace VisionHive.API.Controllers.v2
     [ApiVersion(2.0)]
     public class MotoControllerV2 : ControllerBase
     {
-        [HttpPost]
-        public IActionResult Post([FromBody] MotoRequest request)
+        private readonly MotoMongoRepository _repository;
+
+        public MotoControllerV2(MotoMongoRepository repository)
         {
-            Console.WriteLine("Versão da API: 2.0 - MongoDB");
-            Console.WriteLine($"Placa Recebida:  {request.Placa}");
-            return Ok(new {Mensagem = "Moto inserida com sucesso (MongoDB)", request});
+            _repository = repository;
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] MotoRequest request)
+        {
+            var moto = new Moto()
+            {
+                Placa = request.Placa,
+                Chassi = request.Chassi,
+                NumeroMotor = request.NumeroMotor,
+                Prioridade = request.Prioridade,
+                PatioId = request.PatioId
+            };
+
+            await _repository.CreateAsync(moto);
+            
+            return Ok(new
+            {
+                Mensagem = "Moto cadastrado com sucesso (MongoDB)!",
+                Moto = moto
+            });
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            Console.WriteLine("Versão da API: 2.0 - MongoDB");
-            return Ok(new { Mensagem = "Listanod motos do MongoDB" });
+           var motos = await _repository.GetAllAsync();
+           return Ok(motos);
         }
     
     }
