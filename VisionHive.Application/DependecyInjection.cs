@@ -5,6 +5,8 @@ using VisionHive.Domain.Repositories;
 using VisionHive.Infrastructure.Contexts;
 using VisionHive.Application.Configs;
 using VisionHive.Infrastructure.Repositories;
+using VisionHive.Infrastructure.Repositories.Mongo;
+
 //using VisionHive.Infrastructure.Mongo.Repositories;
 
 
@@ -42,7 +44,7 @@ public static class DependecyInjection
         services.AddScoped<IPatioRepository, PatioRepository>();
 
         // Se existir repositório Mongo:
-        // services.AddScoped<IAlertaRepository, AlertaRepository>();
+        services.AddScoped<FilialMongoRepository>();
 
         return services;
     }

@@ -67,7 +67,7 @@
             },
             "AspNetCore.HealthChecks.MongoDb": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[6.0.0, )"
             },
             "AspNetCore.HealthChecks.Oracle": {
               "target": "Package",
@@ -90,6 +90,10 @@
             "Microsoft.Extensions.Diagnostics.HealthChecks": {
               "target": "Package",
               "version": "[9.0.9, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.25.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

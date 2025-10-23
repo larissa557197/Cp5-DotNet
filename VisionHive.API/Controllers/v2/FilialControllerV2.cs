@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using VisionHive.Application.DTO.Request;
 using VisionHive.Domain.Entities;
+using VisionHive.Infrastructure.Repositories.Mongo;
 
 namespace VisionHive.API.Controllers.v2
 {
@@ -12,20 +13,38 @@ namespace VisionHive.API.Controllers.v2
     [ApiVersion(2.0)]
     public class FilialControllerV2: ControllerBase
     {
+        private readonly FilialMongoRepository _repository;
+
+        public FilialControllerV2(FilialMongoRepository repository)
+        {
+            _repository = repository;
+        }
+        
         // refazer
         [HttpPost]
-        public IActionResult Post([FromBody] FilialRequest request)
+        public async Task<IActionResult> Post([FromBody] FilialRequest request)
         {
-            Console.WriteLine("Versão da API: 2.0 - MongoDB");
-            Console.WriteLine($"Placa Recebida:  {request.Nome}");
-            return Ok(new { Mensagem = "Filial inserida com sucesso (MongoDB)", request });
+            var filial = new Filial
+            {
+                Nome = request.Nome,
+                Bairro = request.Bairro,
+                Cnpj = request.Cnpj
+            };
+
+            await _repository.CreateAsync(filial);
+            
+            return Ok(new
+            {
+                Mensagem = "Filial inserida com sucesso (MongoDB)",
+                    Filial = filial
+            });
         }
 
-        [HttpGet]
-        public IActionResult GetAll()
+        [HttpGet] 
+        public async Task<IActionResult> GetAll()
         {
-            Console.WriteLine("Versão da API: 2.0 - MongoDB");
-            return Ok(new { Mensagem = "Listando filiais do MongoDB" });
+            var filiais = await _repository.GetAllAsync();
+            return Ok(filiais);
         }
 
     }

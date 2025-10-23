@@ -3,15 +3,16 @@
     public class Filial
     {
         
-        protected Filial(){}
         public Guid Id {  get; set; }
-        public string Nome { get; private set; }
-        public string Bairro { get; private set; }
-        public string Cnpj { get; private set; }
+        public string Nome { get;  set; }
+        public string Bairro { get;  set; }
+        public string Cnpj { get;  set; }
 
         public ICollection<Patio> Patios { get; set; } = new List<Patio>();
 
-        public Filial(string nome, string bairro, string cnpj)
+        public Filial() {}
+        
+        public Filial( string nome, string bairro, string cnpj)
         {
             Validar(nome, bairro, cnpj);
             Id = Guid.NewGuid();

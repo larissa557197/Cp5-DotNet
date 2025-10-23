@@ -3,6 +3,7 @@ using VisionHive.API.Extensions;
 using VisionHive.Application;
 using VisionHive.Application.Configs;
 
+
 namespace VisionHive.API;
 
 public class Program
@@ -36,6 +37,18 @@ public class Program
         // versionamento da api
         builder.Services.AddVersioning();
         
+        // CORS
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAll", policy =>
+            {
+                policy.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            });
+        });
+        
+        
         
         var app = builder.Build();
 
@@ -49,6 +62,8 @@ public class Program
                 ui.SwaggerEndpoint("/swagger/v2/swagger.json", "v2");
             });
         }
+
+        app.UseCors("AllowAll");
         
         app.UseRouting();
 

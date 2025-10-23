@@ -23,8 +23,9 @@ public static class HealthCheckExtensions
                 name: "Oracle")
             // Checa o MongoDB (v2 da API)
             .AddMongoDb(
-                 sp => sp.GetRequiredService<IMongoClient>().GetDatabase(settings.MongoDb.DatabaseName),
-                 name: "MongoDB")
+                settings.MongoDb.ConnectionString, // 1º parâmetro: string de Conexão
+                settings.MongoDb.DatabaseName,    // 2º parâmetro: Nome do Banco de Dados
+                name: "MongoDB")
             // URLs externas
             .AddUrlGroup(new Uri("https://fiap.com.br"), name: "FIAP")
             .AddUrlGroup(new Uri("https://google.com.br"), name: "Google");

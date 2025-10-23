@@ -15,19 +15,23 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-          <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
-          <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
-          <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="9.0.0" />
-          <PackageReference Include="AspNetCore.HealthChecks.Oracle" Version="8.0.0" />
-          <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="9.0.0" />
-          <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.9" />
-          <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+
+        <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
+        <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+        <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="6.0.0" />
+        <PackageReference Include="AspNetCore.HealthChecks.Oracle" Version="8.0.0" />
+        <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="9.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.9" />
+        <PackageReference Include="MongoDB.Driver" Version="2.25.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+
+        <!-- Garantir presença local do driver MongoDB -->
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
+        <Content Include="..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
@@ -35,4 +39,5 @@
         <ProjectReference Include="..\VisionHive.Infrastructure\VisionHive.Infrastructure.csproj" />
     </ItemGroup>
 
+    
 </Project>

@@ -1,3 +1,12 @@
+C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.csproj.AssemblyReference.cache
+C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.AssemblyInfoInputs.cache
+C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.AssemblyInfo.cs
+C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.csproj.CoreCompileInputs.cache
+C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.sourcelink.json
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\appsettings.json
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\VisionHive.API.staticwebassets.endpoints.json
@@ -14,6 +23,8 @@ C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\Asp.Versioning.Mvc.Api
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\HealthChecks.MongoDb.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\HealthChecks.Oracle.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\HealthChecks.Uris.dll
+C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\DnsClient.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\Humanizer.dll
@@ -47,6 +58,8 @@ C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\Microsoft.Extensions.P
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\MongoDB.Bson.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\Oracle.EntityFrameworkCore.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\Oracle.ManagedDataAccess.dll
@@ -136,6 +149,9 @@ C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\ru\Microsoft.CodeAnaly
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\runtimes\linux\lib\net8.0\System.DirectoryServices.Protocols.dll
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\runtimes\osx\lib\net8.0\System.DirectoryServices.Protocols.dll
@@ -148,15 +164,6 @@ C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\VisionHive.Infrastruct
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\VisionHive.Application.pdb
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\VisionHive.Infrastructure.pdb
 C:\Users\laris\Cp5-DotNet\VisionHive.API\bin\Debug\net8.0\VisionHive.Domain.pdb
-C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.csproj.AssemblyReference.cache
-C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.AssemblyInfoInputs.cache
-C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.AssemblyInfo.cs
-C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.csproj.CoreCompileInputs.cache
-C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\VisionHive.API.sourcelink.json
 C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\laris\Cp5-DotNet\VisionHive.API\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
