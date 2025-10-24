@@ -1,16 +1,32 @@
-#
-Adicionar (ou revisar) o README.md final com:
+# VisionHive API - Checkpoint 5 (FIAP 2TDSPG)
 
-Descrição do projeto (VisionHive v1/v2)
+API desenvolvida como evolução do projeto **VisionHive**, originalmente criado no **CP4** (Oracle Relacional), agora apliado com **MongoDB**, **HealthCheck** e **versionamento de API** via **Swagger**.
 
-Estrutura das pastas
+O projeto segue o padrão **Clean Architecture + DDD**, com camadas independentes e injeção de dependências configurada.
 
-Instruções para executar (dotnet build, dotnet run)
+---
 
-Rotas e exemplos de requisições
+## Sumário
+- [Arquitetura do Projeto](#arquitetura-do-projeto)
+- [Objetivos do CP5](#objetivos-do-cp5)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Execução do Projeto](#execução-do-projeto)
+- [Estrutura de Pastas](#estrutura-de-pastas)
+- [Health Checks](#health-checks)
+- [Versionamento da API](#versionamento-da-api)
+- [Rotas e Exemplos](#rotas-e-exemplos)
+  - [Versão 1 (Oracle)](#versão-1-oracle)
+  - [Versão 2 (MongoDB)](#versão-2-mongodb)
+- [Autores](#autores)
 
-Créditos do grupo (RMs)
+---
 
-Prints do Swagger (/v1 e /v2)
+## Arquitetura do Projeto
 
-Saída do /health
+O projeto segue o padrão **Clean Architecture**, garantindo separação de responsabilidades e escalabilidade.
+```bash
+VisionHive.API/ → Camada de apresentação (Controllers, Swagger, Versionamento)
+VisionHive.Application/ → Casos de uso, DTOs e validações
+VisionHive.Domain/ → Entidades e regras de negócio
+VisionHive.Infrastructure/→ Acesso a dados (Oracle + MongoDB), Contextos e Repositórios
+```
