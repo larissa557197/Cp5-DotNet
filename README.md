@@ -71,21 +71,27 @@ Por padrão o servidor roda em:
 ```bash
 VisionHive/
  ├── VisionHive.API/
- │    ├── 📁 Controllers/
- │    │     ├── 📁 v1/
- │    │     └── 📁 v2/
- │    ├── Program.cs
- │    └── appsettings.json
+ │        ├── 📁 Controllers/
+ │        │     ├── 📁 v1/
+ │        │     └── 📁 v2/
+ |        ├── 📁 Extensions/
+ │        ├── Program.cs
+ │        └── appsettings.json
  ├── VisionHive.Application/
- │    ├── 📁 DTO/
- │    ├── 📁 Validators/
- │    └── 📁 UseCases/
+ |        ├── 📁 Configs/
+ │        ├── 📁 DTO/
+ │        |        └── 📁 Validators/
+ │        └── 📁 UseCases/
  ├── VisionHive.Domain/
- │    └── 📁 Entities/
+ │         ├── 📁 Entities/
+ |         ├── 📁 Enums/
+ |         └── 📁 Pagination/
  └── VisionHive.Infrastructure/
-      ├── 📁 Contexts/
-      ├── 📁 Repositories/
-                 └── 📁 Mongo/
+           ├── 📁 Contexts/
+           ├── 📁 Mappings/
+           ├── 📁 Migrations/
+           ├── 📁 Repositories/
+                      └── 📁 Mongo/
 ```
 
 ---
