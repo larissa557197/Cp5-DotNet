@@ -20,7 +20,7 @@ namespace VisionHive.API.Controllers.v2
             _repository = repository;
         }
         
-        // refazer
+        // POST - Criar uma filial
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] FilialRequest request)
         {
@@ -40,12 +40,59 @@ namespace VisionHive.API.Controllers.v2
             });
         }
 
+        // GET - Listar todas as filiais
         [HttpGet] 
         public async Task<IActionResult> GetAll()
         {
             var filiais = await _repository.GetAllAsync();
             return Ok(filiais);
         }
+        
+        // GET - Buscar por ID
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var filial = await _repository.GetByIdAsync(id);
+
+            if (filial == null)
+                return NotFound(new { Mensagem = $"Filial com ID {id} não encontrada." });
+
+            return Ok(filial);
+        }
+        
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> Put(Guid id, [FromBody] FilialRequest request)
+        {
+            var filialExistente = await _repository.GetByIdAsync(id);
+            if (filialExistente == null)
+                return NotFound(new { Mensagem = "Filial não encontrada." });
+
+            filialExistente.Nome = request.Nome;
+            filialExistente.Bairro = request.Bairro;
+            filialExistente.Cnpj = request.Cnpj;
+
+            var atualizado = await _repository.UpdateAsync(filialExistente);
+            if (!atualizado)
+                return BadRequest(new { Mensagem = "Falha ao atualizar filial." });
+
+            return Ok(new
+            {
+                Mensagem = "Filial atualizada com sucesso!",
+                Filial = filialExistente
+            });
+        }
+
+        // DELETE - Remover uma filial
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var deletado = await _repository.DeleteAsync(id);
+            if (!deletado)
+                return NotFound(new { Mensagem = "Filial não encontrada." });
+
+            return Ok(new { Mensagem = "Filial excluída com sucesso!" });
+        }
+        
 
     }
 }
