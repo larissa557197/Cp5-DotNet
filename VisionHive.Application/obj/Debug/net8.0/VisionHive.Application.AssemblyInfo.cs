@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VisionHive.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a0f704afafdfcf1f46d9c3baa548b7e97a83aff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b725b7dac1307351f56922978e669d5dcbbadf07")]
 [assembly: System.Reflection.AssemblyProductAttribute("VisionHive.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VisionHive.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

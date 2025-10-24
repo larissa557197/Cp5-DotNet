@@ -910,7 +910,8 @@
       },
       "VisionHive.Domain/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "9.0.8"
+          "Microsoft.EntityFrameworkCore": "9.0.8",
+          "MongoDB.Bson": "2.25.0"
         },
         "runtime": {
           "VisionHive.Domain.dll": {

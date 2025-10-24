@@ -18,8 +18,8 @@ public class PaginatedRequestValidator : AbstractValidator<PaginatedRequest>
             .WithMessage($"PageSize deve estar entre 1 e {MaxPageSize}.");
 
         RuleFor(x => x.Subject)
-            .NotEmpty().WithMessage("Subject deve ser informado.")
-            .When(x => !string.IsNullOrWhiteSpace(x.Subject));
+            .Must(_ => true)
+            .WithMessage("Subject é opcional.");
         
     }
 }

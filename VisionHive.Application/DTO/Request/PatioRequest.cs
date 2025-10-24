@@ -5,5 +5,6 @@
         public string Nome { get; set; }
         public int LimiteMotos { get; set; }
         public Guid FilialId { get; set; }
+        
     }
 }

@@ -16,7 +16,11 @@ public class Program
         var settings = builder.Configuration.Get<Settings>();
 
         // controllers
-        builder.Services.AddControllers();
+        builder.Services.AddControllers()
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+            });
         
         // swagger + API Explorer
         builder.Services.AddEndpointsApiExplorer();
