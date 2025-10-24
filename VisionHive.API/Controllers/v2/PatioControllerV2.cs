@@ -39,12 +39,63 @@ namespace VisionHive.API.Controllers.v2
             });
         }
 
+        // GET - Lista todos os pátios
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var patios = await _repository.GetAllAsync();
             return Ok(patios);
         }
+        
+        // GET - Buscar por ID
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var patio = await _repository.GetByIdAsync(id);
+            if (patio == null)
+                return NotFound(new { Mensagem = $"Pátio com ID {id} não encontrado." });
+
+            return Ok(patio);
+        }
+        
+        // UPDATE - Atualiza 
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> Put(Guid id, [FromBody] PatioRequest request)
+        {
+            var patioExitente = await _repository.GetByIdAsync(id);
+            if(patioExitente == null)
+                return NotFound(new { Mensagem = "Pátio não encontrado."});
+            
+            patioExitente.Nome = request.Nome;
+            patioExitente.LimiteMotos = request.LimiteMotos;
+            patioExitente.FilialId = request.FilialId;
+            
+            var atualizado = await _repository.UpdateAsync(patioExitente);
+            if (!atualizado)
+                return BadRequest(new { Mensagem = "Falha ao atualizar pátio" });
+            
+            return Ok(new
+            {
+                Mensagem = "Pátio atualizado com sucesso!",
+                Patio = patioExitente
+            });
+        }
+        
+        // DELETE
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var deletado = await _repository.DeleteAsync(id);
+            if (!deletado)
+                return NotFound(new { Mensagem = "Pátio não encontrado" });
+
+            return Ok(new
+            {
+                Mensagem = "Pátio excluído com sucesso!"
+            });
+        }
     }
+    
+    
 }
 
