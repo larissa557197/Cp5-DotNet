@@ -1,9 +1,15 @@
 ﻿using VisionHive.Application.Enums;
+using System;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace VisionHive.Domain.Entities
 {
     public class Moto
     {
         
+        [BsonId]
+        [BsonRepresentation(BsonType.String)]
         public Guid Id { get; set; }
         public string? Placa { get; set; }
 
