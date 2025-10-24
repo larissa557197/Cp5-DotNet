@@ -130,6 +130,8 @@ As duas versões aparecem no **Swagger** em abas separadas:
 
 ## 🧭 Rotas e Exemplos
 
+Nos métodos GET, temos que colocar no PageSize = 10 para conseguir listar todos os items
+
 ### ⚙️ Versão 1 (Oracle)
 
 🏢 Filiais
