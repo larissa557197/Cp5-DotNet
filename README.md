@@ -139,3 +139,14 @@ As duas versões aparecem no **Swagger** em abas separadas:
 ## Rotas e Exemplos
 
 ### Versão 1 (Oracle)
+
+| MÉTODO | ROTA | DESCRIÇÃO |
+|--------|------|-----------|
+|   GET  | `api/v1/filiais` | Lista de filiais paginadas (Oracle) |
+|   GET  | `api/v1/filiais/{id}` | Busca filial por ID |
+|   POST  | `api/v1/filiais` | Cadastra nova filial |
+|   PUT  | `api/v1/filiais/{id}` | Atualiza filial |
+|   DELETE  | `api/v1/filiais/{id}` | Remove filial |
+
+### Versão 2 (MongoDB)
+
