@@ -117,6 +117,7 @@ A aplicação expõe o endpoint global `/health` com o status da aplicação e d
 ## 🌀 Versionamento da API
 
 O projeto utiliza o pacote `Asp.Versioning.Mvc` para manter duas versões coexistentes:
+
 | VERSÃO | DESCRIÇÃO | BANCO |
 |--------|-----------|-------|
 |   v1   | Versão relacional (mantida no CP4) | Oracle |
@@ -161,6 +162,7 @@ As duas versões aparecem no **Swagger** em abas separadas:
 ---
 
 ### ⚙️ Versão 2 (MongoDB)
+
 🏢 Filiais
 | MÉTODO | ROTA | DESCRIÇÃO |
 |--------|------|-----------|
@@ -169,6 +171,7 @@ As duas versões aparecem no **Swagger** em abas separadas:
 |  POST  |	`/api/v2/filiais` |	Cadastra nova filial |
 |   PUT  |	`/api/v2/filiais/{id}` |	Atualiza filial |
 | DELETE |	`/api/v2/filiais/{id}` |	Remove filial |
+
 🅿️ Pátios
 | MÉTODO | ROTA | DESCRIÇÃO |
 |--------|------|-----------|
