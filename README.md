@@ -6,21 +6,6 @@ O projeto segue o padrão **Clean Architecture + DDD**, com camadas independente
 
 ---
 
-## 🧭 Sumário
-- [Arquitetura do Projeto](#arquitetura-do-projeto)
-- [Objetivos do CP5](#objetivos-do-cp5)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Execução do Projeto](#execução-do-projeto)
-- [Estrutura de Pastas](#estrutura-de-pastas)
-- [Health Checks](#health-checks)
-- [Versionamento da API](#versionamento-da-api)
-- [Rotas e Exemplos](#rotas-e-exemplos)
-  - [Versão 1 (Oracle)](#versão-1-oracle)
-  - [Versão 2 (MongoDB)](#versão-2-mongodb)
-- [Autores](#autores)
-
----
-
 ## 🧩 Arquitetura do Projeto
 
 O projeto segue o padrão **Clean Architecture**, garantindo separação de responsabilidades e escalabilidade.
@@ -200,8 +185,10 @@ As duas versões aparecem no **Swagger** em abas separadas:
 
 ### 🧪 Exemplos de Requisição
 
-#### 🏢 Filiais
-**POST** `/api/v2/filiais`
+#### ⚙️ Versão 1 (Oracle)
+
+##### 🏢 Filiais
+**POST** `/api/v1/filiais`
 ```json
 {
   "nome": "Filial Santana",
@@ -209,16 +196,48 @@ As duas versões aparecem no **Swagger** em abas separadas:
   "cnpj": "12345678000199"
 }
 ```
-🅿️ Pátios
+##### 🅿️ Pátios
+**POST** `/api/v1/patios`
+```json
+{
+  "nome": "Pátio Norte",
+  "limiteMotos": 100,
+  "filialId": "9a8dcb35-0f8b-4de3-92ad-0ab82a3b347f"
+}
+```
+##### 🏍️ Motos
+**POST** `/api/v1/motos`
+```json
+{
+  "placa": "ABC1234",
+  "chassi": "XYZ987654321",
+  "numeroMotor": "MTR123",
+  "prioridade": 1,
+  "patioId": "7bdfb1e8-56f7-4c2c-a5c7-12f4e98241aa"
+}
+```
+
+#### ⚙️ Versão 1 (Oracle)
+
+##### 🏢 Filiais
+**POST** `/api/v2/filiais`
+```json
+{
+  "nome": "Filial Santana",
+  "bairro": "Santana",
+  "cnpj": "12.345.678/0001-95"
+}
+```
+##### 🅿️ Pátios
 **POST** `/api/v2/patios`
 ```json
 {
   "nome": "Pátio Norte",
-  "limiteMotos": 50,
+  "limiteMotos": 100,
   "filialId": "9a8dcb35-0f8b-4de3-92ad-0ab82a3b347f"
 }
 ```
-🏍️ Motos
+##### 🏍️ Motos
 **POST** `/api/v2/motos`
 ```json
 {
@@ -228,7 +247,6 @@ As duas versões aparecem no **Swagger** em abas separadas:
   "prioridade": 1,
   "patioId": "7bdfb1e8-56f7-4c2c-a5c7-12f4e98241aa"
 }
-
 ```
 
 ---
