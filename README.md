@@ -1,4 +1,4 @@
-# VisionHive API - Checkpoint 5 (FIAP 2TDSPG)
+# 🚀 VisionHive API - Checkpoint 5 (FIAP 2TDSPG)
 
 API desenvolvida como evolução do projeto **VisionHive**, originalmente criado no **CP4** (Oracle Relacional), agora apliado com **MongoDB**, **HealthCheck** e **versionamento de API** via **Swagger**.
 
@@ -6,7 +6,7 @@ O projeto segue o padrão **Clean Architecture + DDD**, com camadas independente
 
 ---
 
-## Sumário
+## 🧭 Sumário
 - [Arquitetura do Projeto](#arquitetura-do-projeto)
 - [Objetivos do CP5](#objetivos-do-cp5)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
@@ -21,7 +21,7 @@ O projeto segue o padrão **Clean Architecture + DDD**, com camadas independente
 
 ---
 
-## Arquitetura do Projeto
+## 🧩 Arquitetura do Projeto
 
 O projeto segue o padrão **Clean Architecture**, garantindo separação de responsabilidades e escalabilidade.
 
@@ -34,8 +34,8 @@ VisionHive.Infrastructure/→ Acesso a dados (Oracle + MongoDB), Contextos e Rep
 
 ---
 
-## Objetivos do CP5
-**Evoluir a aplicação do CP4**, adicionando:
+## 🎯 Objetivos do CP5
+✅ **Evoluir a aplicação do CP4**, adicionando:
 - CRUD completo com **MongoDB**
 - **Health Checks** para oracle e MongoDB
 - **Versionamento via Swagger** (`v1` = Oracle, `v2` = Mongo)
@@ -45,7 +45,7 @@ VisionHive.Infrastructure/→ Acesso a dados (Oracle + MongoDB), Contextos e Rep
 
 ---
 
-## Tecnologias Utilizadas
+## 🧠 Tecnologias Utilizadas
 
 | Tecnologia | Função |
 |-------------|--------|
@@ -60,14 +60,14 @@ VisionHive.Infrastructure/→ Acesso a dados (Oracle + MongoDB), Contextos e Rep
 
 ---
 
-## Execução do Projeto
+## ⚙️ Execução do Projeto
 
-### Pré-requisitos
+### 🔧 Pré-requisitos
 - .NET SDK 8.0 instalado
 - MongoDB rodando localmente (ou remoto)
 - Banco Oracle (apenas para v1)
 
-### Executar a API
+### ▶️ Executar a API
 
 No diretório raiz do projeto:
 ```bash
@@ -81,7 +81,7 @@ Por padrão o servidor roda em:
 
 ---
 
-## Estrutura das Pastas
+## 🧱 Estrutura das Pastas
 
 ```bash
 VisionHive/
@@ -105,7 +105,7 @@ VisionHive/
 
 ---
 
-## Health Checks
+## ❤️ Health Checks
 
 A aplicação expõe o endpoint global `/health` com o status da aplicação e dos bancos:
 
@@ -123,7 +123,7 @@ A aplicação expõe o endpoint global `/health` com o status da aplicação e d
 
 ---
 
-## Versionamento da API
+## 🌀 Versionamento da API
 
 O projeto utiliza o pacote `Asp.Versioning.Mvc` para manter duas versões coexistentes:
 | VERSÃO | DESCRIÇÃO | BANCO |
@@ -136,9 +136,9 @@ As duas versões aparecem no **Swagger** em abas separadas:
 
 ---
 
-## Rotas e Exemplos
+## 🧭 Rotas e Exemplos
 
-### Versão 1 (Oracle)
+### ⚙️ Versão 1 (Oracle)
 
 🏢 Filiais
 | MÉTODO | ROTA | DESCRIÇÃO |
@@ -169,7 +169,7 @@ As duas versões aparecem no **Swagger** em abas separadas:
 
 ---
 
-### Versão 2 (MongoDB)
+### ⚙️ Versão 2 (MongoDB)
 🏢 Filiais
 | MÉTODO | ROTA | DESCRIÇÃO |
 |--------|------|-----------|
@@ -198,7 +198,7 @@ As duas versões aparecem no **Swagger** em abas separadas:
 
 ---
 
-### Exemplos de Requisição
+### 🧪 Exemplos de Requisição
 
 #### 🏢 Filiais
 **POST** `/api/v2/filiais`
@@ -233,7 +233,7 @@ As duas versões aparecem no **Swagger** em abas separadas:
 
 ---
 
-## Autores
+## 🧑‍💻 Autores
 | Nome | RM |
 |------|----|
 | Larissa Muniz | 557197 |
