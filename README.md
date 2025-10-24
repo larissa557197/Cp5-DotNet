@@ -11,10 +11,10 @@ O projeto segue o padrão **Clean Architecture + DDD**, com camadas independente
 O projeto segue o padrão **Clean Architecture**, garantindo separação de responsabilidades e escalabilidade.
 
 ```bash
-VisionHive.API/ → Camada de apresentação (Controllers, Swagger, Versionamento)
-VisionHive.Application/ → Casos de uso, DTOs e validações
-VisionHive.Domain/ → Entidades e regras de negócio
-VisionHive.Infrastructure/→ Acesso a dados (Oracle + MongoDB), Contextos e Repositórios
+📁 VisionHive.API/ → Camada de apresentação (Controllers, Swagger, Versionamento)
+📁 VisionHive.Application/ → Casos de uso, DTOs e validações
+📁 VisionHive.Domain/ → Entidades e regras de negócio
+📁 VisionHive.Infrastructure/→ Acesso a dados (Oracle + MongoDB), Contextos e Repositórios
 ```
 
 ---
@@ -52,7 +52,7 @@ VisionHive.Infrastructure/→ Acesso a dados (Oracle + MongoDB), Contextos e Rep
 - MongoDB rodando localmente (ou remoto)
 - Banco Oracle (apenas para v1)
 
-### ▶️ Executar a API
+### ▶️ Executar a API 
 
 No diretório raiz do projeto:
 ```bash
@@ -71,21 +71,21 @@ Por padrão o servidor roda em:
 ```bash
 VisionHive/
  ├── VisionHive.API/
- │    ├── Controllers/
- │    │     ├── v1/
- │    │     └── v2/
+ │    ├── 📁 Controllers/
+ │    │     ├── 📁 v1/
+ │    │     └── 📁 v2/
  │    ├── Program.cs
  │    └── appsettings.json
  ├── VisionHive.Application/
- │    ├── DTO/
- │    ├── Validators/
- │    └── UseCases/
+ │    ├── 📁 DTO/
+ │    ├── 📁 Validators/
+ │    └── 📁 UseCases/
  ├── VisionHive.Domain/
- │    └── Entities/
+ │    └── 📁 Entities/
  └── VisionHive.Infrastructure/
-      ├── Contexts/
-      ├── Repositories/
-      └── Repositories/Mongo/
+      ├── 📁 Contexts/
+      ├── 📁 Repositories/
+                 └── 📁 Mongo/
 ```
 
 ---
