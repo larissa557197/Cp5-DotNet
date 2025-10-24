@@ -140,6 +140,7 @@ As duas versões aparecem no **Swagger** em abas separadas:
 
 ### Versão 1 (Oracle)
 
+🏢 Filiais
 | MÉTODO | ROTA | DESCRIÇÃO |
 |--------|------|-----------|
 |   GET  | `api/v1/filiais` | Lista de filiais paginadas (Oracle) |
@@ -148,5 +149,96 @@ As duas versões aparecem no **Swagger** em abas separadas:
 |   PUT  | `api/v1/filiais/{id}` | Atualiza filial |
 |   DELETE  | `api/v1/filiais/{id}` | Remove filial |
 
+🅿️ Pátios
+| MÉTODO | ROTA | DESCRIÇÃO |
+|--------|------|-----------|
+|   GET  | `/api/v1/patios` | Lista de pátio paginados (Oracle) |
+|   GET  | `/api/v1/patios/{id}` | Busca pátio por ID |
+|   POST  | `/api/v1/patios` | Cadastra novo pátio |
+|   PUT  | `/api/v1/patios/{id}` | Atualiza pátio |
+|   DELETE  | `/api/v1/patios/{id}` | Remove pátio |
+
+🏍️ Motos
+| MÉTODO | ROTA | DESCRIÇÃO |
+|--------|------|-----------|
+|   GET  | `/api/v1/motos` | Lista de motos paginadas (Oracle) |
+|   GET  | `/api/v1/motos/{id}` | Busca moto por ID |
+|   POST  | `/api/v1/motos` | Cadastra nova moto |
+|   PUT  | `/api/v1/motos/{id}` | Atualiza moto |
+|   DELETE  | `/api/v1/motos/{id}` | Remove moto |
+
+---
+
 ### Versão 2 (MongoDB)
+🏢 Filiais
+| MÉTODO | ROTA | DESCRIÇÃO |
+|--------|------|-----------|
+|   GET	 | `/api/v2/filiais` |	Lista todas as filiais (MongoDB) |
+|   GET  |	`/api/v2/filiais/{id}` |	Busca filial por ID |
+|  POST  |	`/api/v2/filiais` |	Cadastra nova filial |
+|   PUT  |	`/api/v2/filiais/{id}` |	Atualiza filial |
+| DELETE |	`/api/v2/filiais/{id}` |	Remove filial |
+🅿️ Pátios
+| MÉTODO | ROTA | DESCRIÇÃO |
+|--------|------|-----------|
+|   GET	 | `/api/v2/patios` |	Lista todos os pátios (MongoDB) |
+|   GET  |	`/api/v2/patios/{id}` |	Busca pátio por ID |
+|  POST  |	`/api/v2/patios` |	Cadastra novo pátio |
+|   PUT  |	`/api/v2/patios/{id}` |	Atualiza pátio |
+| DELETE |	`/api/v2/patios/{id}` |	Remove pátio |
+
+🏍️ Motos
+| MÉTODO | ROTA | DESCRIÇÃO |
+|--------|------|-----------|
+|   GET	 | `/api/v2/motos` |	Lista todas as motos (MongoDB) |
+|   GET  |	`/api/v2/motos/{id}` |	Busca moto por ID |
+|  POST  |	`/api/v2/motos` |	Cadastra nova moto |
+|   PUT  |	`/api/v2/motos/{id}` |	Atualiza moto |
+| DELETE |	`/api/v2/motos/{id}` |	Remove moto |
+
+---
+
+### Exemplos de Requisição
+
+#### 🏢 Filiais
+**POST** `/api/v2/filiais`
+```json
+{
+  "nome": "Filial Santana",
+  "bairro": "Santana",
+  "cnpj": "12345678000199"
+}
+```
+🅿️ Pátios
+**POST** `/api/v2/patios`
+```json
+{
+  "nome": "Pátio Norte",
+  "limiteMotos": 50,
+  "filialId": "9a8dcb35-0f8b-4de3-92ad-0ab82a3b347f"
+}
+```
+🏍️ Motos
+**POST** `/api/v2/motos`
+```json
+{
+  "placa": "ABC1234",
+  "chassi": "XYZ987654321",
+  "numeroMotor": "MTR123",
+  "prioridade": 1,
+  "patioId": "7bdfb1e8-56f7-4c2c-a5c7-12f4e98241aa"
+}
+
+```
+
+---
+
+## Autores
+| Nome | RM |
+|------|----|
+| Larissa Muniz | 557197 |
+| João Victor Michael | 555678 
+| Henrique Garcia | 558062 |
+
+
 
