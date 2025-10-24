@@ -12,14 +12,14 @@ public class FilialMongoRepository
 
     public FilialMongoRepository(IMongoDatabase database)
     {
-        // Registro do serializer compatível com qualquer versão
+        // ⚙️ Garante compatibilidade com UUID binário padrão do Mongo
         try
         {
             BsonSerializer.RegisterSerializer(typeof(Guid), new GuidSerializer(GuidRepresentation.Standard));
         }
         catch
         {
-            // ignora caso já tenha sido registrado
+            // ignora se já tiver sido registrado (versões antigas não têm verificação)
         }
 
         _collection = database.GetCollection<Filial>("Filiais");
@@ -39,9 +39,15 @@ public class FilialMongoRepository
     }
     
     // READ - por ID
-    public async Task<Filial> GetByIdAsync(Guid id)
+    public async Task<Filial?> GetByIdAsync(Guid id)
     {
-        return await _collection.Find(f => f.Id == id).FirstOrDefaultAsync();
+        // Busca tanto pelo campo Id quanto pelo _id binário (compatível com UUID('...'))
+        var filter = Builders<Filial>.Filter.Or(
+            Builders<Filial>.Filter.Eq(f => f.Id, id),
+            Builders<Filial>.Filter.Eq("_id", new BsonBinaryData(id, GuidRepresentation.Standard))
+        );
+
+        return await _collection.Find(filter).FirstOrDefaultAsync();
     }
     
     // UPDATE
