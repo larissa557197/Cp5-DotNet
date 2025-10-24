@@ -47,6 +47,56 @@ namespace VisionHive.API.Controllers.v2
            var motos = await _repository.GetAllAsync();
            return Ok(motos);
         }
+        
+        // GET - Busca por ID
+        [HttpGet("{id}")] 
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var moto = await _repository.GetByIdAsync(id);
+            if (moto == null)
+                return NotFound(new { Mensagem = $"Moto com ID {id} não encontrado." });
+
+            return Ok(moto);
+        }
+        
+        // UPDATE
+        [HttpPut("{id:guid}")]
+        public async Task<IActionResult> Put(Guid id, [FromBody] MotoRequest request)
+        {
+            var motoExitente = await _repository.GetByIdAsync(id);
+            if(motoExitente == null)
+                return NotFound(new { Mensagem = "Moto não encontrada."});
+            
+            motoExitente.Placa = request.Placa;
+            motoExitente.Chassi = request.Chassi;
+            motoExitente.NumeroMotor = request.NumeroMotor;
+            motoExitente.Prioridade = request.Prioridade;
+            motoExitente.PatioId = request.PatioId;
+            
+            var atualizado = await _repository.UpdateAsync(motoExitente);
+            if (!atualizado)
+                return BadRequest(new { Mensagem = "Falha ao atualizar moto" });
+            
+            return Ok(new
+            {
+                Mensagem = "Moto atualizada com sucesso!",
+                Moto = motoExitente
+            });
+        }
+        
+        // DELETE
+        [HttpDelete("{id:guid}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var deletado = await _repository.DeleteAsync(id);
+            if (!deletado)
+                return NotFound(new { Mensagem = "Moto não encontrada" });
+
+            return Ok(new
+            {
+                Mensagem = "Moto excluída com sucesso!"
+            });
+        }
     
     }
 }
